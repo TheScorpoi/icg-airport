@@ -311,7 +311,6 @@ function createRoad3(l, w, posx, posz) {
 
 function createRoad4(l, w, posx, posz) {
   const fullroad = new THREE.Group();
-
   const roadGeometry1 = new THREE.PlaneGeometry(l, w);
   const roadMaterial1 = new THREE.MeshStandardMaterial({
     color: 0x000000,
@@ -334,7 +333,6 @@ function createRoad4(l, w, posx, posz) {
 
 function createRoad5(l, w, posx, posz) {
   const fullroad = new THREE.Group();
-
   const roadGeometry1 = new THREE.PlaneGeometry(l, w);
   const roadMaterial1 = new THREE.MeshStandardMaterial({
     color: 0x000000,
@@ -462,7 +460,6 @@ function createAirPlane(scene) {
   pivot.add(airplane);
   scene.add(pivot)
   pivot.name="pivot"
-
 }
 
 function normalize (v, vmin, vmax, tmin, tmax) {
@@ -552,15 +549,12 @@ function createRoad_07_Lights() {
   lights.add(bulb2, light2);
   lights.add(bulb3, light3);
   lights.add(bulb4, light4);
-
   return lights;
 }
 
 
 function createLargo() {
-
   const largo = new THREE.Group();
-
   const largoGeometry = new THREE.PlaneGeometry(1.2, 1.2 );
   const largoMaterial = new THREE.MeshStandardMaterial({color: 0x000000, side: THREE.DoubleSide});
   const largo_chao = new THREE.Mesh(largoGeometry, largoMaterial);
@@ -717,13 +711,11 @@ function createControlTower() {
   controlTower.add(antena3);
 
   controlTower.position.set(-0.4, 0, 0.75);
-
   return controlTower;
 }
 
 function createGate() {
   const gate = new THREE.Group();
-
   var geometryBuilding = new THREE.BoxBufferGeometry(0.25, 0.25, 1.8);
   var materialBuilding = new THREE.MeshLambertMaterial({ color: 0xccccccc });
   const gateBox = new THREE.Mesh(geometryBuilding, materialBuilding);
@@ -731,7 +723,6 @@ function createGate() {
   gateBox.rotation.y = 1.35;
   
   gate.add(gateBox);
-
   return gate;
 }
 
@@ -812,7 +803,6 @@ function createAeroportBuilding() {
   mulduraBaixo_.position.set(0, 0.25, -2.01);
   mulduraBaixo_.rotation.z = 1.57;
 
-
   aeroportBuilding.add(building);
   aeroportBuilding.add(buildingRoofTop);
   aeroportBuilding.add(janela);
@@ -839,7 +829,6 @@ function createAeroportBuilding() {
   return aeroportBuilding;
 }
 
-
 // Displacement value
 var delta = 0.1;
 var flaguinha = false;
@@ -847,7 +836,6 @@ var flaguinha_2 = true;
 function computeFrame(time) {
   // Can extract an object from the scene Graph from its name
   const light = sceneElements.sceneGraph.getObjectByName("light");
-
 
   var targetY = normalize(1, -0.75, 0.75, 25, 175) / 18;
   var targetX = normalize(1, -0.75, 0.75, -100, 100) / 18;
@@ -877,7 +865,6 @@ function computeFrame(time) {
       airplane.position.x += (targetX - airplane.position.x) * -0.001;
       airplane.rotation.y += -0.009;
     } else if (pivot.rotation.y > -3.3) {
-      //console.log(pivot.rotation.y);
       pivot.rotation.y -= 0.1;
     } else if (airplane.position.x > -11.64 && flaguinha == false) {
       airplane.rotation.y -= 1.3;
@@ -904,16 +891,13 @@ function computeFrame(time) {
     airplane.position.x += 0.0001;
     airplane.rotation.y += -0.012;
   } else if (flaguinha_2 == false && airplane.position.z < 0.94){
-    console.log(airplane.position);
     airplane.position.z += 0.005;
     airplane.position.x += 0.002;
   } else if (flaguinha_2 == false && airplane.position.x < 3.169) {
     airplane.rotation.y += 0.009;
     airplane.position.x += 0.0001;
-    console.log(airplane.position);
   }
 
-  //cargoTruck moves
   let cargoTruck = sceneElements.sceneGraph.getObjectByName("cargoTruck");
   
   if (W) { cargoTruck.translateX(0.02) }
@@ -931,11 +915,7 @@ function computeFrame(time) {
 
   delta += 0.01;
 
-  //TODO fazer com que o propeller ande mais rapido a medida que ele descola
   propeller.rotation.x += 0.278;
-
-  //airplane.position.x +=  0.005;
-
 
   // Rendering
   helper.render(sceneElements);

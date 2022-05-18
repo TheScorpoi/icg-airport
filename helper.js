@@ -1,11 +1,5 @@
 "use strict";
 
-//  Adapted from Daniel Rohmer tutorial
-//
-// 		https://imagecomputing.net/damien.rohmer/teaching/2019_2020/semester_1/MPRI_2-39/practice/threejs/content/000_threejs_tutorial/index.html
-//
-// 		J. Madeira - April 2021
-
 const helper = {
 
     initEmptyScene: function (sceneElements) {
@@ -34,7 +28,6 @@ const helper = {
         spotLight.shadow.mapSize.height = 2048;
         spotLight.name = "light";
         sceneElements.sceneGraph.add(spotLight);
-        
 
         // Create renderer (with shadow map)
         const renderer = new THREE.WebGLRenderer();
@@ -57,7 +50,6 @@ const helper = {
         controls.maxDistance = 35;
         controls.maxPolarAngle = Math.PI / 2;
 
-
         // Add the rendered image in the HTML DOM
         const htmlElement = document.querySelector("#Tag3DScene");
         htmlElement.appendChild(renderer.domElement);
@@ -74,7 +66,4 @@ const helper = {
     render: function render(sceneElements) {
         sceneElements.renderer.render(sceneElements.sceneGraph, sceneElements.camera);
     },
-
-
-    
 };
