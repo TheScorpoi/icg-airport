@@ -40,6 +40,7 @@ function load3DObjects(scene, camera) {
 
   //airplane.position.set(4, (57/258) / 1.5, -1.3);
   createAirPlane(scene);  
+  
 
   //create road
   scene.add(createRoad1(-7, -0.5, 0, 1.5));
