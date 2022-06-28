@@ -387,7 +387,7 @@ function createAirPlane(scene) {
   sideWing.receiveShadow = true;
   airplane.add(sideWing);
 
-  let light_wing1 = new THREE.SpotLight(0xffffff, 2.5, 1, THREE.Math.degToRad(45), 0.4);
+  let light_wing1 = new THREE.SpotLight(0xffffff, 2.5, 1, 0.5, 0.4);
   light_wing1.position.set(0.5, 0.07, 0.5);
   light_wing1.castShadow = true;
   
@@ -396,7 +396,7 @@ function createAirPlane(scene) {
   light_wing1.target = lightT;
   airplane.add(light_wing1, lightT);
 
-  let light_wing2 = new THREE.SpotLight(0xffffff, 2.5, 1, THREE.Math.degToRad(45), 0.4);
+  let light_wing2 = new THREE.SpotLight(0xffffff, 2.5, 1, 0.5, 0.4);
   light_wing2.position.set(0.5, 0.07, -0.3);
   light_wing2.castShadow = true;
   
@@ -585,7 +585,7 @@ function createCargoTruck() {
   const chassi = new THREE.Mesh(geometryChassi, materialChassi);
   chassi.position.set(-0.5, 0.07, -0.2);
 
-  let light = new THREE.SpotLight(0xffffff, 4, 1, THREE.Math.degToRad(45), 0.4);
+  let light = new THREE.SpotLight(0xffffff, 4, 1, 0.5, 0.4);
   light.position.set(-0.5, 0.07, -0.2);
   light.castShadow = true;
   
